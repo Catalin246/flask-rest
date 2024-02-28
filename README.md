@@ -36,3 +36,8 @@ Make sure to run the initial migration commands to update the database (from the
 ### Based on : Full description and guide (beware this guide targets an older python version!) ###
 https://medium.freecodecamp.org/structuring-a-flask-restplus-web-service-for-production-builds-c2ec676de563
 
+### Errors
+
+`export FLASK_APP=manage.py`
+
+
