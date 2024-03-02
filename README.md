@@ -40,4 +40,17 @@ https://medium.freecodecamp.org/structuring-a-flask-restplus-web-service-for-pro
 
 `export FLASK_APP=manage.py`
 
+flask shell
 
+
+from app.main.model.user import User
+import datetime
+admin = User(email="admin@admin.nl", username="admin", password="admin123",registered_on=datetime.datetime.utcnow(), admin=True)
+db.session.add(admin)
+db.session.commit()
+
+from app.main.model.user import User
+import datetime
+admin = User(email="cata@admin.nl", username="cata", password="password",registered_on=datetime.datetime.utcnow(), admin=True)
+db.session.add(admin)
+db.session.commit()
