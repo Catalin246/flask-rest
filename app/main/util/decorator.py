@@ -42,3 +42,14 @@ def admin_token_required(f: Callable) -> Callable:
         return f(*args, **kwargs)
 
     return decorated
+
+def user_logged(f: Callable) -> Callable:
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        data = Auth.get_logged_in_user(request)
+        user_id = data[0]
+        if not user_id:
+            return {'message': 'User ID not found in token'}, 401  
+        return f(user_id, *args, **kwargs)
+    return decorated
+

@@ -18,6 +18,8 @@ class User(db.Model):
     public_id = db.Column(db.String(100), unique=True)
     username = db.Column(db.String(50), unique=True)
     password_hash = db.Column(db.String(100))
+    # Add a relationship to access todos associated with a user
+    todos = db.relationship('Todo', backref='owner', lazy=True)
 
     @property
     def password(self):

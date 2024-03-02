@@ -17,3 +17,9 @@ class AuthDto:
         'email': fields.String(required=True, description='The email address'),
         'password': fields.String(required=True, description='The user password '),
     })
+
+class TodoDto:
+    api = Namespace('todo', description='todo related operations')
+    todo = api.model('todo', {
+        'description': fields.String(required=True, description='Todo description'),
+    })
